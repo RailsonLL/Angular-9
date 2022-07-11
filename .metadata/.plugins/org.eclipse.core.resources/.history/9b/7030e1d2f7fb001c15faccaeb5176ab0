@@ -1,0 +1,9 @@
+package com.clientes.model.repository;
+
+import java.io.Serializable;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ClienteRepository extends JpaRepository<ClienteRepository, Integer>, Serializable {
+
+}

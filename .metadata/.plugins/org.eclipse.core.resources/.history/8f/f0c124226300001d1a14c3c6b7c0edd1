@@ -1,0 +1,7 @@
+campo.nome.obrigatorio=O campo nome é obrigatório.
+campo.cpf.obrigatorio=O campo CPF é obrigatório.
+campo.cpf.invalido=CPF inválido.
+
+campo.descricao.obrigatorio=Informe a descrição do serviço.
+campo.preco.obrigatorio=Insira um preço.
+campo.data.obrigatorio=Insira a data do serviço.

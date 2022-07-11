@@ -1,0 +1,16 @@
+package com.clientes.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.clientes.model.repository.ClienteRepository;
+
+@RestController
+public class ClienteController {
+
+	@Autowired
+	private ClienteRepository repository;
+	
+	
+	
+}

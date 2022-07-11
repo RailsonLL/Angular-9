@@ -1,0 +1,45 @@
+package com.clientes.rest.dto;
+
+/*
+ * O DTO aqui é para receber os dados do JSON com o id do Cliente em vez do objeto Cliente
+ */
+public class ServicoPrestadoDTO {
+	
+	private String descricao;
+	private String valor;
+	private String data;
+	private Integer idCliente;
+	
+	
+	public ServicoPrestadoDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public String getValor() {
+		return valor;
+	}
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
+	}
+	public Integer getIdCliente() {
+		return idCliente;
+	}
+	public void setIdCliente(Integer idCliente) {
+		this.idCliente = idCliente;
+	}
+	
+	
+
+}

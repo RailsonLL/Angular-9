@@ -1,0 +1,5 @@
+package com.clientes.config;
+
+public class WebConfig {
+
+}
