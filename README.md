@@ -14,6 +14,7 @@ O sistema inclui:
 * Arquitetura MVC;
 
 
+
 (TELA DE CONSULTA DE CLIENTE)
 
 ![consulta-clientes](https://user-images.githubusercontent.com/105746963/178764440-df261ef4-b9d5-47e4-85e8-04d78f474f00.PNG)
