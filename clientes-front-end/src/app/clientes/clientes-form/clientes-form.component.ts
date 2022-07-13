@@ -59,6 +59,7 @@ export class ClientesFormComponent implements OnInit {
           this.cliente = response;
         },
         errorResponse => { //segundo callback retorna quando ocorreu algum erro
+          console.log(errorResponse);
           this.success = false;
           this.errors = errorResponse.error.errors;
         }

@@ -19,10 +19,23 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private authService: AuthService
-    ) { }
+    ) {
+      localStorage.removeItem('access_token');
+    }
 
   onSubmit() {
-    //this.router.navigate(["/home"]);
+    if (!this.cadastrando){
+      this.authService.tentarLogar(this.username, this.password).subscribe(
+        response => {
+          const access_token = JSON.stringify(response); //salva o JSON como string
+          localStorage.setItem('access_token', access_token); //armazena o token JWT gerado no login em localStorage para utilizar na autentitação das APIs
+          this.router.navigate(["/home"]);
+        }, error => {
+          this.mensagemSucesso = null;
+          this.errors = ['Usuário e/ou senha incorreto(s).'];
+        }
+      )
+    }
   }
 
   preparaCadastro(event) {
@@ -32,7 +45,7 @@ export class LoginComponent {
 
   cancelarCadastro() {
     this.cadastrando = false;
-    this.errors = null;
+    this.errors = [];
     this.mensagemSucesso = null;
   }
 
@@ -42,8 +55,12 @@ export class LoginComponent {
     usuario.password = this.password;
     this.authService.salvar(usuario).subscribe(
       response => {
+        console.log(response);
+        this.errors = [];
         this.mensagemSucesso = "Cadastro realizado com sucesso! Efetue o login."
-        this.errors = null;
+        this.username = '';
+        this.password = '';
+        this.cadastrando = false;
       }, errorResponse => {
         this.errors = errorResponse.error.errors;
         this.mensagemSucesso = null;

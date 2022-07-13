@@ -18,12 +18,14 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		http
 			.authorizeRequests()
 				.antMatchers("/api/usuarios").permitAll() //permite todos acessarem
-				//.antMatchers("/api/cliente/**").hasAnyRole("USER") //permite somente o usuário configurado como USER
+				.antMatchers("/h2-console/**").permitAll()
 				.antMatchers(
-						"/api/cliente/**",
+						"/api/clientes/**",
 						"/api/servicos/**"
 						).authenticated()
 				.anyRequest().denyAll(); //nega o acesso a qualquer outra requisição
+		
+		//.antMatchers("/api/cliente/**").hasAnyRole("USER") //permite somente o usuário configurado como USER
 	}
 	
 }

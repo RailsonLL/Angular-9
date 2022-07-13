@@ -18,11 +18,17 @@
                   Serviços Prestados
                   <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
               ></a>
+              <div class="sb-sidenav-menu-heading">Logout</div>
+              <a class="nav-link collapsed" (click)="logout()" href="#" data-toggle="collapse" aria-expanded="false" aria-controls="collapseLayouts"
+                  ><div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
+                  Sair
+                  <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+              ></a>
           </div>
       </div>
       <div class="sb-sidenav-footer">
-          <div class="small">Usuário: Railson</div>
-          Sistema DEMO
+          <div class="small">Usuário Logado:</div>
+          {{ usuarioLogado }}
       </div>
   </nav>
 </div>
