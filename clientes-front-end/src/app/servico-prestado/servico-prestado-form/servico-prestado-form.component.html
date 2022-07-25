@@ -49,7 +49,10 @@
       <div class="col-md-6">
         <div class="form-group">
             <label>Preço:</label>
-            <input name="valor" type="text" class="form-control" [(ngModel)]="servico.valor"/>
+            <input name="valor" #valor="ngModel" type="text" class="form-control" [(ngModel)]="servico.valor" numerico minimoValidator valorMinimo="50"/>
+        </div>
+        <div *ngIf="valor.errors && (valor.dirty || valor.touched)" class="alert alert-danger">
+          <div [hidden]="!valor.errors['minimo']">Valor precisa ser maior que 50</div>
         </div>
       </div>
     </div>
